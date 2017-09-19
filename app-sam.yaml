@@ -21,7 +21,7 @@ Resources:
         ApiEventSource:
           Type: Api
           Properties:
-            Path: /service1{proxy+}
+            Path: /service1
             Method: ANY
   Service2Function:
     Type: AWS::Serverless::Function
@@ -34,7 +34,7 @@ Resources:
         ApiEventSource:
           Type: Api
           Properties:
-            Path: /service2{proxy+}
+            Path: /service2/{proxy+}
             Method: ANY
 
 Outputs:
