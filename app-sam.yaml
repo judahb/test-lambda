@@ -21,7 +21,7 @@ Resources:
         ApiEventSource:
           Type: Api
           Properties:
-            Path: /service1
+            Path: /service1*
             Method: ANY
   Service2Function:
     Type: AWS::Serverless::Function
