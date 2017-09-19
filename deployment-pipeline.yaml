@@ -58,7 +58,24 @@ Resources:
                           - 's3:GetObject'
                           - 's3:GetObjectVersion'
                           - 's3:PutObject'
-    CodeBuildProject:
+    CodeBuildProject1:
+        Type: AWS::CodeBuild::Project
+        Properties:
+            Name: !Sub '${ServiceName}_build'
+            Description: Build project for the Lambda service
+            Artifacts:
+              Type: CODEPIPELINE
+            Environment:
+                Type: LINUX_CONTAINER
+                ComputeType: BUILD_GENERAL1_SMALL
+                Image: aws/codebuild/eb-nodejs-4.4.6-amazonlinux-64:2.1.3
+                EnvironmentVariables:
+                  - Name: BUILD_OUTPUT_BUCKET
+                    Value: !Ref BuildArtifactsBucket
+            ServiceRole: !GetAtt CodeBuildServiceRole.Arn
+            Source:
+                Type: CODEPIPELINE
+    CodeBuildProject2:
         Type: AWS::CodeBuild::Project
         Properties:
             Name: !Sub '${ServiceName}_build'
@@ -169,7 +186,7 @@ Resources:
                       OutputArtifacts:
                         - Name: SourceZip
                       RunOrder: 1
-                - Name: Build
+                - Name: Build1
                   Actions:
                     - Name: CodeBuild
                       ActionTypeId:
@@ -178,14 +195,28 @@ Resources:
                         Provider: CodeBuild
                         Version: 1
                       Configuration:
-                        ProjectName: !Ref CodeBuildProject
+                        ProjectName: !Ref CodeBuildProject1
                       InputArtifacts:
                         - Name: SourceZip
                       OutputArtifacts:
-                        - Name: BuiltZip
+                        - Name: BuiltZip1
+                - Name: Build2
+                  Actions:
+                    - Name: CodeBuild
+                      ActionTypeId:
+                        Category: Build
+                        Owner: AWS
+                        Provider: CodeBuild
+                        Version: 1
+                      Configuration:
+                        ProjectName: !Ref CodeBuildProject2
+                      InputArtifacts:
+                        - Name: SourceZip
+                      OutputArtifacts:
+                        - Name: BuiltZip2
                 - Name: Prod
                   Actions:
-                    - Name: CreateChangeSet
+                    - Name: Service1
                       ActionTypeId:
                         Category: Deploy
                         Owner: AWS
@@ -196,11 +227,28 @@ Resources:
                         RoleArn: !GetAtt CloudFormationExecutionRole.Arn
                         StackName: !Sub '${ServiceName}-Stack-Prod'
                         ChangeSetName: !Sub '${ServiceName}-ChangeSet-Prod'
-                        TemplatePath: BuiltZip::app-output_sam.yaml
+                        TemplatePath: BuiltZip1::app-output_sam.yaml
                         Capabilities: CAPABILITY_IAM
                         ParameterOverrides: '{ "Stage": "prod" }'
                       InputArtifacts:
-                        - Name: BuiltZip
+                        - Name: BuiltZip1
+                      RunOrder: 1
+                    - Name: Service2
+                      ActionTypeId:
+                        Category: Deploy
+                        Owner: AWS
+                        Provider: CloudFormation
+                        Version: 1
+                      Configuration:
+                        ActionMode: CHANGE_SET_REPLACE
+                        RoleArn: !GetAtt CloudFormationExecutionRole.Arn
+                        StackName: !Sub '${ServiceName}-Stack-Prod'
+                        ChangeSetName: !Sub '${ServiceName}-ChangeSet-Prod'
+                        TemplatePath: BuiltZip2::app-output_sam.yaml
+                        Capabilities: CAPABILITY_IAM
+                        ParameterOverrides: '{ "Stage": "prod" }'
+                      InputArtifacts:
+                        - Name: BuiltZip2
                       RunOrder: 1
                     - Name: ExecuteChangeSet
                       ActionTypeId:

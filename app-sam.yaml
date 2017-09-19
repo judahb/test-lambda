@@ -14,27 +14,27 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: app/
+      CodeUri: service1/
       Runtime: nodejs4.3
       Policies: AWSLambdaBasicExecutionRole
       Events:
         ApiEventSource:
           Type: Api
           Properties:
-            Path: /{proxy+}
+            Path: /service1/{proxy+}
             Method: ANY
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: app/
+      CodeUri: service2/
       Runtime: nodejs4.3
       Policies: AWSLambdaBasicExecutionRole
       Events:
         ApiEventSource:
           Type: Api
           Properties:
-            Path: /{proxy+}
+            Path: /service2/{proxy+}
             Method: ANY
 
 Outputs:
