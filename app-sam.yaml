@@ -5,13 +5,24 @@ Parameters:
   Stage:
     Type: String
     AllowedValues:
-      - beta
-      - gamma
       - prod
-    Default: beta
+    Default: prod
     Description: Stage that can be added to resource names
 
 Resources:
+  TimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: app/
+      Runtime: nodejs4.3
+      Policies: AWSLambdaBasicExecutionRole
+      Events:
+        ApiEventSource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
