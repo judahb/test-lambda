@@ -186,9 +186,9 @@ Resources:
                       OutputArtifacts:
                         - Name: SourceZip
                       RunOrder: 1
-                - Name: Build1
+                - Name: Build
                   Actions:
-                    - Name: CodeBuild
+                    - Name: CodeBuild1
                       ActionTypeId:
                         Category: Build
                         Owner: AWS
@@ -200,9 +200,7 @@ Resources:
                         - Name: SourceZip
                       OutputArtifacts:
                         - Name: BuiltZip1
-                - Name: Build2
-                  Actions:
-                    - Name: CodeBuild
+                    - Name: CodeBuild2
                       ActionTypeId:
                         Category: Build
                         Owner: AWS

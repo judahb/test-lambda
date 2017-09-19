@@ -43,8 +43,8 @@
       <file leaf-file-name="deployment-pipeline.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deployment-pipeline.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-351">
-              <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+            <state relative-caret-position="223">
+              <caret line="247" column="37" lean-forward="true" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -168,12 +168,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505766557705</updated>
-      <workItem from="1505766559260" duration="5344000" />
+      <workItem from="1505766559260" duration="5618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5344000" />
+    <option name="totallyTimeSpent" value="5618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="25" width="1280" height="739" extended-state="0" />
@@ -262,8 +262,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deployment-pipeline.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-351">
-          <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        <state relative-caret-position="223">
+          <caret line="247" column="37" lean-forward="true" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
           <folding />
         </state>
       </provider>
