@@ -61,7 +61,7 @@ Resources:
     CodeBuildProject1:
         Type: AWS::CodeBuild::Project
         Properties:
-            Name: !Sub '${ServiceName}_build'
+            Name: !Sub '${AWS::StackName}_build1'
             Description: Build project for the Lambda service
             Artifacts:
               Type: CODEPIPELINE
@@ -78,7 +78,7 @@ Resources:
     CodeBuildProject2:
         Type: AWS::CodeBuild::Project
         Properties:
-            Name: !Sub '${ServiceName}_build'
+            Name: !Sub '${AWS::StackName}_build2'
             Description: Build project for the Lambda service
             Artifacts:
               Type: CODEPIPELINE

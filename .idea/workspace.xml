@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="443ecea0-0394-472e-90a6-2e1b7bacbd84" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app-sam.yaml" afterPath="$PROJECT_DIR$/app-sam.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buildspec.yml" afterPath="$PROJECT_DIR$/buildspec.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deployment-pipeline.yaml" afterPath="$PROJECT_DIR$/deployment-pipeline.yaml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,7 +23,7 @@
       <file leaf-file-name="app-sam.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-sam.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="433">
               <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
               <folding />
             </state>
@@ -42,17 +40,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deployment-pipeline.yaml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="deployment-pipeline.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deployment-pipeline.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="-351">
+              <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-sam.yaml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test-sam.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-sam.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -71,8 +69,10 @@
       <find>app</find>
       <find>CodeBuildProject</find>
       <find>CODEPIPELINE</find>
-      <find>ServerlessRestApi</find>
       <find>zip</find>
+      <find>codebuildproject</find>
+      <find>build</find>
+      <find>ServerlessRestApi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,9 +81,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/deployment-pipeline.yaml" />
         <option value="$PROJECT_DIR$/buildspec.yml" />
         <option value="$PROJECT_DIR$/app-sam.yaml" />
+        <option value="$PROJECT_DIR$/deployment-pipeline.yaml" />
       </list>
     </option>
   </component>
@@ -168,12 +168,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505766557705</updated>
-      <workItem from="1505766559260" duration="5054000" />
+      <workItem from="1505766559260" duration="5344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5054000" />
+    <option name="totallyTimeSpent" value="5344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="25" width="1280" height="739" extended-state="0" />
@@ -236,14 +236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app-sam.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buildspec.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -252,18 +244,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deployment-pipeline.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test-sam.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-sam.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deployment-pipeline.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-351">
+          <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
           <folding />
         </state>
       </provider>
